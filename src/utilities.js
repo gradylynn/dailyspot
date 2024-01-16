@@ -151,7 +151,7 @@ const copyShareString = () => {
     clipboardString += '▪️'.repeat((42-daysInMonth-firstDayOfMonth)%7);
     clipboardString += `\n(${numCorrect}/${TODAY.getDate()} Correct)`;
     
-    clipboardString += '\n\ngradylynn.com/spotify-game';
+    clipboardString += '\n\ngradylynn.com/dailyspot';
     navigator.clipboard.writeText(clipboardString);
 }
 
