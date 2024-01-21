@@ -116,11 +116,13 @@ const getResultsData = () => {
 
 const copyShareString = () => {
     let firstDayOfMonth = (TODAY.getDay() - TODAY.getDate() + 50) % 7;
+    let numCorrect = 0;
     let resultsString = getResultsData().map((d) => {
         if (
             (d['track1Playcount'] > d['track2Playcount'] && d['selection'] === '1') ||
             (d['track2Playcount'] > d['track1Playcount'] && d['selection'] === '2')
         ) {
+            numCorrect += 1;
             return '🟩';
         }
         else if (
@@ -147,7 +149,9 @@ const copyShareString = () => {
         clipboardString += [...resultsString][i];
     }
     clipboardString += '▪️'.repeat((42-daysInMonth-firstDayOfMonth)%7);
-    clipboardString += '\n\ngradylynn.com/spotify-game';
+    clipboardString += `\n(${numCorrect}/${TODAY.getDate()} Correct)`;
+    
+    clipboardString += '\n\ngradylynn.com/dailyspot';
     navigator.clipboard.writeText(clipboardString);
 }
 

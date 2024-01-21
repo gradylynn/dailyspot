@@ -1,7 +1,7 @@
 {
-  "name": "spotify-game",
+  "name": "dailyspot",
   "version": "0.1.0",
-  "homepage": "https://gradylynn.com/spotify-game",
+  "homepage": "https://gradylynn.com/dailyspot",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
