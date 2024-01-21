@@ -1,6 +1,9 @@
-Using this for gh-pages deployment rn: https://github.com/gitname/react-gh-pages
-
 schedule.json + tracks.json => python script => updated tracks.json
+
+big problem here: https://github.com/entriphy/sp-playcount-librespot/issues/28
+possible solution: https://github.com/entriphy/sp-playcount
+For now, I'll keep relying on that guy's API.
+If that fails in the future, I'll probs need to try and reverse engineer spotify's graphql api :-/
 
 # Getting Started with Create React App
 
