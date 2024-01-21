@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "spotify-game"
+name = "dailyspot"
 version = "0.1.0"
 description = ""
 authors = ["Grady Lynn <gradylynn314@gmail.com>"]
