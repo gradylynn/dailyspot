@@ -4,6 +4,7 @@ name: Update Track Play Counts
 on:
   schedule:
     - cron: '36 01 * * *'
+  workflow_dispatch:
 
 jobs:
   build:

@@ -49,12 +49,12 @@ def main():
     ]
     window_df = window_df.merge(tracks_df, how='left', on=['date', 'track1Id', 'track2Id'])
     window_df['track1Playcount'] = window_df.apply(
-        lambda x: x['track1Playcount'] if pd.notnull(x['track1Playcount']) and x['date'] <= tomorrow
+        lambda x: x['track1Playcount'] if pd.notnull(x['track1Playcount']) and x['date'] <= str(tomorrow)
         else get_track_info(x['track1Id'])['playcount'],
         axis=1
     ).astype(int)
     window_df['track2Playcount'] = window_df.apply(
-        lambda x: x['track2Playcount'] if pd.notnull(x['track2Playcount']) and x['date'] <= tomorrow
+        lambda x: x['track2Playcount'] if pd.notnull(x['track2Playcount']) and x['date'] <= str(tomorrow)
         else get_track_info(x['track2Id'])['playcount'],
         axis=1
     ).astype(int)
