@@ -105,7 +105,7 @@ const getResultsData = () => {
     let selectionsString = Cookies.get('selections');
     // use this variable to adjust for if tommorrow's track is already in the data
     let addOne = TODAY.getTime() < (new Date(tracks[0]['date'] + 'T00:00:00')).getTime() ? 1 : 0;
-    for (let i = 5; i < 5+Math.min(tracks.length-addOne, TODAY.getDate()); i++) {
+    for (let i = 4; i < 4+Math.min(tracks.length-addOne, TODAY.getDate()); i++) {
         let t = JSON.parse(JSON.stringify(tracks[i+addOne]));
         t['selection'] = selectionsString[i] || '0';
         t['dateStr'] = convertDateStr(tracks[i+addOne]['date']);
