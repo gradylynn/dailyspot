@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
@@ -16,7 +16,45 @@ import CloseIcon from '@mui/icons-material/Close';
 
 import {submitSelection, getTodaysTracks, getTodaysSelection, copyShareString} from './utilities';
 
+// window.onSpotifyIframeApiReady = (IFrameAPI) => {
+//   console.log('potatotomato');
+//   const todaysTracks = getTodaysTracks();
+//   const track1IFrame = document.getElementById(todaysTracks[0]+"-frame");
+//   const track2IFrame = document.getElementById(todaysTracks[1]+"-frame");
+//   const track1Callback = (EmbedController) => {
+//     EmbedController.loadUri(`spotify:track:${todaysTracks[0]}`);
+//     EmbedController.addListener('playback_update', e => {
+//       console.log('AHHHHHH!!!');
+//     });
+//   };
+//   const track2Callback = (EmbedController) => {
+
+//   };
+//   IFrameAPI.createController(track1IFrame, {}, track1Callback);
+//   IFrameAPI.createController(track2IFrame, {}, track2Callback);
+// };
+
+
 const App = () => {
+  // load google analytics (https://hackernoon.com/how-to-add-script-tags-in-react)
+  // for spotify CDN: script.setAttribute("src", "https://open.spotify.com/embed/iframe-api/v1");
+  useEffect(() => {
+    const head = document.querySelector("head");
+    const script = document.createElement("script");
+
+    script.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=G-0W10JSVX4R");
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0W10JSVX4R');
+  
+    head.appendChild(script);
+
+    return () => {
+      head.removeChild(script);
+    };
+  });
+
   let todaysSelection = getTodaysSelection();
   const [selection, setSelection] = useState(todaysSelection);
   const [submitted, setSubmitted] = useState(Boolean(todaysSelection));
