@@ -11,7 +11,9 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.PAT }}
 
     # Installing python things
     # https://github.com/actions/setup-python/blob/main/docs/advanced-usage.md#caching-packages
