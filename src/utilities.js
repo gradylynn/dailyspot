@@ -106,9 +106,9 @@ const getResultsData = () => {
     // use this variable to adjust for if tommorrow's track is already in the data
     let addOne = TODAY.getTime() < (new Date(tracks[0]['date'] + 'T00:00:00')).getTime() ? 1 : 0;
     for (let i = 0; i < Math.min(tracks.length-addOne, TODAY.getDate()); i++) {
-        let t = JSON.parse(JSON.stringify(tracks[i+addOne]));
+        let t = JSON.parse(JSON.stringify(tracks[i+addOne+4]));
         t['selection'] = selectionsString[i] || '0';
-        t['dateStr'] = convertDateStr(tracks[i+addOne]['date']);
+        t['dateStr'] = convertDateStr(tracks[i+addOne+4]['date']);
         output.push(t);
     }
     return output;
