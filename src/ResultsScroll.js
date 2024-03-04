@@ -158,7 +158,7 @@ const aBunchOfListItems = () => {
   let tracks = getResultsData();
   tracks = tracks.slice(0, Math.min(tracks.length, 7));
 
-  let items = []
+  let items = [];
   for (let i = 0; i < tracks.length; i++) {
     items.push(
       <ListItem disablePadding key={tracks[i]['dateStr']} sx={{borderBottom: i===(tracks.length-1) ? 0 : 1}}>
@@ -173,7 +173,7 @@ const aBunchOfListItems = () => {
       </ListItem>
     )
   }
-  return items
+  return items;
 }
 
 export default ResultsScroll;
