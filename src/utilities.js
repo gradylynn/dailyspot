@@ -105,7 +105,7 @@ const getResultsData = () => {
     let selectionsString = Cookies.get('selections');
     // use this variable to adjust for if tommorrow's track is already in the data
     let addOne = TODAY.getTime() < (new Date(tracks[0]['date'] + 'T00:00:00')).getTime() ? 1 : 0;
-    for (let i = 0; i < Math.min(tracks.length-addOne, TODAY.getDate()); i++) {
+    for (let i = 0; i < Math.min(tracks.length-addOne, Math.max(7, TODAY.getDate())); i++) {
         let t = JSON.parse(JSON.stringify(tracks[i+addOne+4]));
         t['selection'] = selectionsString[i] || '0';
         t['dateStr'] = convertDateStr(tracks[i+addOne+4]['date']);
@@ -117,7 +117,7 @@ const getResultsData = () => {
 const copyShareString = () => {
     let firstDayOfMonth = (TODAY.getDay() - TODAY.getDate() + 50) % 7;
     let numCorrect = 0;
-    let resultsString = getResultsData().map((d) => {
+    let resultsString = getResultsData().slice(0, TODAY.getDate()).map((d) => {
         if (
             (d['track1Playcount'] > d['track2Playcount'] && d['selection'] === '1') ||
             (d['track2Playcount'] > d['track1Playcount'] && d['selection'] === '2')
