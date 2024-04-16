@@ -1,9 +1,9 @@
 ---
-name: Update Track Play Counts
+name: Update Upcoming Track Schedule
 
 on:
   schedule:
-    - cron: '36 01 * * *'
+    - cron: '42 01 15 Jan,Apr,Jul,Oct *'
   workflow_dispatch:
 
 jobs:
@@ -33,7 +33,7 @@ jobs:
         timeout_minutes: 10
         max_attempts: 5
         retry_wait_seconds: 1800
-        command: poetry run python get_track_data.py update_tracks
+        command: poetry run python get_track_data.py update_schedule
       env:
         SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
         SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
@@ -43,5 +43,5 @@ jobs:
       run: |
         git config --global user.name 'Grady Lynn'
         git config --global user.email 'gradylynn@users.noreply.github.com'
-        git diff --quiet && git diff --staged --quiet || git commit -am "automated tracks data update for $(date +'%Y-%m-%d')"
+        git diff --quiet && git diff --staged --quiet || git commit -am "automated schedule update for $(date +'%B %Y')"
         git push
