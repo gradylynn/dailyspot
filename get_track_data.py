@@ -9,14 +9,23 @@ import pandas as pd
 
 playlist_ids = [
     '37i9dQZEVXcDTxbvihAMNA', # my discover weekly
-    '37i9dQZF1DX0kbJZpiYdZl', # hot hits USA
-    '37i9dQZF1DX1lVhptIYRda', # hot country
     '37i9dQZF1DXcBWIGoYBM5M', # today's top hits
+    '37i9dQZF1DX1lVhptIYRda', # hot country
     '37i9dQZF1DX0XUsuxWHRQd', # rap caviar
     '37i9dQZF1EIcwI3ks67O1o', # my mood music mix
     '37i9dQZF1EIehlJXbuV04P', # my adventure mix
     '37i9dQZF1DWVqJMsgEN0F4', # alt now
     '37i9dQZF1DWYV7OOaGhoH0', # roots rising
+    '37i9dQZF1DX6ziVCJnEm59', # your favorite coffeehouse
+    '37i9dQZF1DX56bqlsMxJYR', # classic oldies
+    '37i9dQZF1DX4dyzvuaRJ0n', # mint
+    '37i9dQZF1DWXRqgorJj26U', # rock classics
+    '37i9dQZF1DX4UtSsGT1Sbe', # all out 80s
+    '37i9dQZF1DXbTxeAdrVG2l', # all out 90s
+    '37i9dQZF1DX4o1oenSJRJd', # all out 2000s
+    '37i9dQZF1DX6ALfRKlHn1t', # soak up the sun
+    '37i9dQZF1DWTkxQvqMy4WW', # chillin' on a dirt road
+    '37i9dQZF1DX2TRYkJECvfC', # deep house relax
 ]
 
 this_dir = os.path.dirname(os.path.realpath(__file__))
