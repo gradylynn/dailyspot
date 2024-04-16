@@ -3,7 +3,7 @@ name: Update Upcoming Track Schedule
 
 on:
   schedule:
-    - cron: '42 01 * Jan,Apr,Jul,Oct *'
+    - cron: '42 01 15 Jan,Apr,Jul,Oct *'
   workflow_dispatch:
 
 jobs:
